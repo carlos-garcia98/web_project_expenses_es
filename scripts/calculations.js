@@ -16,19 +16,19 @@ for (let expense of expenseEntries) {
   totalExpensesValue += expense[1];
 }
 
-const calculateAverageExpense = () => {
+function calculateAverageExpense() {
   if (expenseEntries.length === 0) {
     return 0;
   }
 
   return totalExpensesValue / expenseEntries.length;
-};
+}
 
-const calculateBalance = () => {
+function calculateBalance() {
   return budgetValue - totalExpensesValue;
-};
+}
 
-const updateBalanceColor = () => {
+function updateBalanceColor() {
   let twentyFivePercent = (budgetValue * 25) / 100;
 
   if (calculateBalance() < 0) {
@@ -38,9 +38,9 @@ const updateBalanceColor = () => {
   } else {
     balanceColor = "green";
   }
-};
+}
 
-const calculateCategoryExpenses = (category) => {
+function calculateCategoryExpenses(category) {
   let totalCategoryExpenses = 0;
 
   for (let expense of expenseEntries) {
@@ -50,9 +50,9 @@ const calculateCategoryExpenses = (category) => {
   }
 
   return totalCategoryExpenses;
-};
+}
 
-const calculateLargestCategory = () => {
+function calculateLargestCategory() {
   let categories = [];
   let categoriesData = [];
 
@@ -78,9 +78,9 @@ const calculateLargestCategory = () => {
   }
 
   return largestCategory;
-};
+}
 
-const addExpenseEntry = (expenseArray) => {
+function addExpenseEntry(expenseArray) {
   expenseEntries.push(expenseArray);
   totalExpensesValue += expenseArray[1];
-};
+}
